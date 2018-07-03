@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "GTMetrix";
+}
+<header class="header">Header</header>
+<div class="wrapper">
+    <article class="main">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span id="successSubmit" class="d-none"></span>
+ 
+                <span>@ViewData["Message"].ToString()</span>
+                <h5 class="panel-title">Registration Form</h5>
+            </div>
+            <div class="panel-body">
+                 
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                {
+                    <div class="col-md-12 col-sm-12">
+                        <div class="form-group col-md-6 col-sm-8">
+                            <label for="name">Name* </label>
+                            <input type="text" name="name" required="required" class="form-control input-sm" id="name" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-8">
+                            <label for="email">Email*</label>
+                            <input type="email" name="email" required="required" class="form-control input-sm" id="email" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-8">
+                            <label for="mobile">Password*</label>
+                            <input type="password" name="password" required="required"
+                                   title="Must contain at least one number and one uppercase and one lowercase letter, and at least 2 special characters" class="form-control input-sm" id="password" placeholder="">
+                            <span id="validpassword" class="d-none">&#10004; valid password</span>
+                            <span id="invalidpassword" class="d-none">&#10006; invalid password-Must contain at least one number and one uppercase and one lowercase letter, and at least 2 special characters</span>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-8">
+                            <label for="mobile">Confirmed Password*</label>
+                            <input type="password" required="required" placeholder="Confirm" class="form-control input-sm" id="confirmedPassword">
+                            <span id="matchedpassword" class="d-none">&#10004; password match</span>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-8" id="checkboxes">
+                            <label for="mobile">Referrer*</label>
+                            <span id="uncheckedReferrer" class="d-none">&#10006; At least one should be checked</span>
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="Referrer" id="Referrer1" name="optionReferrer" value="option1Referrer">Option 1
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="Referrer" id="Referrer2" name="optionReferrer" value="option2Referrer">Option 2
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="Referrer" id="Referrer3" name="optionReferrer" value="option3Referrer">Option 3
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="Referrer" id="ReferrerOther" name="optionReferrer" value="option4Referrer">Other
+                                </label>
+                            </div>
+                            <input type="text" class="form-control d-none" name="otherRef" id="otherReferrer" placeholder="Enter other referrer">
+
+                        </div>
+                        <div class="form-group col-md-6 col-sm-8">
+                            <label for="mobile">Account Type*</label>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" required="required" name="AccountType" id="AccountType1" value="accountoption1">
+                                <label class="form-check-label" for="">
+                                    Option 1
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" required="required" name="AccountType" id="AccountType2" value="accountoption2" checked>
+                                <label class="form-check-label" for="">
+                                    Option 2
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" required="required" name="AccountType" id="AccountType3" value="accountoption3">
+                                <label class="form-check-label" for="">
+                                    Option 3
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" required="required" name="AccountType" id="AccountType4" value="accountoption4">
+                                <label class="form-check-label" for="">
+                                    Option 4
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-8 col-sm-9">
+                            <div class="input-group  ">
+                                <input type="text" class="form-control" name="Coupon" id="CouponString" placeholder="Enter Coupon">
+                                <div class="input-group-append">
+                                    <a class="btn btn-outline-secondary" id="addCoupon">Add</a>           
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-11 col-sm-11">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" required="required" id="agreeTerms" value=""> I accept the Terms of Service *
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-8">
+
+                            <div class="btn-group">
+                                <input type="reset" value="Reset" class="form-control btn btn-default input-sm" id="reset" placeholder="">
+                                <input type="submit" value="Submit" class="form-control btn btn-success input-sm" id="submit" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                
+                }
+            </div>
+        </div>
+    </article>
+    <aside class="aside aside-1"></aside>
+    <aside class="aside aside-2"></aside>
+    <aside class="aside aside-3"></aside>
+</div>
+
+<script src="~/Scripts/gtmetrix.js"></script>
